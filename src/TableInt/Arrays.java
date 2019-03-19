@@ -1,29 +1,40 @@
 package TableInt;
 
-import java.lang.reflect.Array;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public interface Arrays {
-    Array[][] arrayOne = new Array[3][3];
-    Array[][] arrayTwo = new Array[3][3];
-
+    ArrayList arrayOne = new ArrayList<Integer>(3);
+    ArrayList arrayTwo = new ArrayList<Integer>(3);
+    Object amountArrayOne = new Object();
+    Integer amountArrayTwo=0;
 
     static void amountforTwoArays() {
-//        Integer amountArrayOne=0;
-//        Integer amountArrayTwo;
+        
         SecureRandom randomForArrays = new SecureRandom();
         int nextInt = 1+randomForArrays.nextInt();
-
-        for (int i=0; i<arrayOne.length; i++) {
-            for (int j=0; j<arrayOne.length; j++) {
-                arrayOne[i][j].set(i,j,1+randomForArrays.nextInt(255)); //1+randomForArrays.nextInt(255);
-                arrayTwo[i][j].set(i,j,1+randomForArrays.nextInt(255));
-            }
+        System.out.println("*******************************************************************************************************************************************"+'\n');
+        System.out.println("ArrayLists now....");
+        
+        for (short i=0; i<3; i++) {
+                arrayOne.add(1+randomForArrays.nextInt(255)); //1+randomForArrays.nextInt(255);
+                arrayTwo.add(1+2+randomForArrays.nextInt(255)-2);
         }
-        for (int i=0; i<arrayOne.length; i++) {
-            for (int j = 0; j < arrayOne.length; j++) {
-                System.out.println(arrayOne.length);
-            }        }
+        for (short i=0; i<3; i++) {
+            System.out.printf(arrayOne.get(i)+" | ");
+            setAmountArrayOne(arrayOne.get(i),amountArrayOne);
+        }
+        System.out.println('\n'+setAmountArrayOne(arrayOne,amountArrayOne));
+        System.out.println('\n');
+        for (short i=0;i<3;i++) {
+            System.out.printf(arrayTwo.get(i)+" | ");
+        }
+    }
+
+    static Integer setAmountArrayOne(Object a, Object b) {
+        a += b;
+        return (Integer) a;
     }
 
 }

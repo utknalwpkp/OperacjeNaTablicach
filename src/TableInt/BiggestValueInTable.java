@@ -16,7 +16,7 @@ public interface BiggestValueInTable {
         System.out.println('\n'+" Z ilu elementów ma się składać jednowymiarowa tablica?");
         x =inputX.nextInt();
         int[] bigTable= new int[x];
-        int[] biggest = new int[1];
+        int[] biggest = new int[2];
         biggest[0]=0;
         int[] smallest = new int[1];
         smallest[0]=255;
@@ -35,6 +35,14 @@ public interface BiggestValueInTable {
         }
         System.out.println('\n'+" |"+big+"| "+ biggest[0]+" : highest value");
         System.out.println('\n'+" |"+small+"| "+ smallest[0]+" : lowest value");
+        System.out.println('\n'+"********************************************************************************************");
+        System.out.println("Wprowadz liczbę od 0 do 255 którą poszukujesz");
+        biggest[1]=inputX.nextInt();
+        for (short i=0;i<bigTable.length;i++) {
+            if (bigTable[i]==biggest[1]) {
+                System.out.println('\n'+"Znaleziono na pozycji "+(i+1)+" | "+ bigTable[i]+" |");
+            }
+        }
     }
 
 }

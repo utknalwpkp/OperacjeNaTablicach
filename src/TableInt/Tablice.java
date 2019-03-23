@@ -23,14 +23,14 @@ import java.util.Scanner;
                 tabInt2[i][j]= inputInt.nextInt();                              */
 
                  tabInt1[i][j] = 1+randomNumbers.nextInt(255);
-                 sumOfIntTable1 = tabInt1[i][j] + sumOfIntTable1;
+                 sumOfIntTable1 += tabInt1[i][j];
                  tabInt2[i][j] = 1-2+randomNumbers.nextInt(255);
-                 sumofIntTable2 = tabInt2[i][j] + sumofIntTable2;
+                 sumofIntTable2 += tabInt2[i][j];
              }
          }
          if (sumOfIntTable1>sumofIntTable2) {
-             System.out.println("Suma liczb w tabInt1 jest większa");
-         } else System.out.println("Suma liczb w tabInt2 jest większa");
+             System.out.println("Suma liczb w tabInt1 jest większa "+sumOfIntTable1+" | "+sumofIntTable2);
+         } else System.out.println("Suma liczb w tabInt2 jest większa "+sumofIntTable2+ " | "+sumOfIntTable1);
      }
     static void printBoard() {
         System.out.println('\n');
